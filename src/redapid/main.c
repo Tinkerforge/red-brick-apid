@@ -350,6 +350,9 @@ int main(int argc, char **argv) {
 		goto error_network;
 	}
 
+	// FIXME: delay program start to avoid starting programs before async
+	//        stack discovery is complete in brick
+
 	if (inventory_load_programs() < 0) {
 		goto error_load_programs;
 	}
